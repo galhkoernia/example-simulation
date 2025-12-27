@@ -1,0 +1,60 @@
+/*
+ * Created on Sat Dec 27 2025
+ *
+ * Copyright (c) 2025 Your Company
+ */
+
+ /* src/styles/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode Variables */
+    --bg-primary: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
+  }
+
+  .dark {
+    /* Dark Mode Variables */
+    --bg-primary: #0F1A3D;
+    --bg-surface: #172554;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --border-color: #334155;
+  }
+
+  .contrast {
+    /* High Contrast Mode */
+    --bg-primary: #FFFFFF;
+    --bg-surface: #F8FAFC;
+    --text-primary: #000000;
+    --text-secondary: #1E293B;
+    --border-color: #000000;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 dark:bg-black/10;
+  }
+  
+  .neumorphic {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+                -5px -5px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  .text-shadow {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
